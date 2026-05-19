@@ -13,13 +13,12 @@ class Product:
         self.price = price
         self.quantity = quantity
 
-if __name__ == '__main__':
-    # pragma: no cover
-    product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 5)
-    product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
-    product3 = Product('Лук', 'Овощи', 8.50, 5)
-    product4 = Product('Помидор', 'Овощи', 12.8, 5)
-
-    print(product1.description)
-    print(product2.price)
-    print(product4.quantity)
+# if __name__ == '__main__':
+#     # pragma: no cover
+#     product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 5)
+#     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
+#     product3 = Product('Лук', 'Овощи', 8.50, 5)
+#     product4 = Product('Помидор', 'Овощи', 12.8, 5)
+#     print(product1.description)
+#     print(product2.price)
+#     print(product4.quantity)
