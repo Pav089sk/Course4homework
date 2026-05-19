@@ -1,17 +1,18 @@
-
-
 class Product:
     """Класс описания продукта"""
+
     name: str
     description: str
     price: float
     quantity: int
 
     def __init__(self, name, description, price, quantity):
+        """Инициализация класса описания продукта"""
         self.name = name
         self.description = description
         self.price = price
         self.quantity = quantity
+
 
 # if __name__ == '__main__':
 #     # pragma: no cover

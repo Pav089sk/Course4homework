@@ -1,22 +1,19 @@
-
-from src.products import Product
-
 class Category:
     """Класс категории продукта"""
+
     name: str
     description: str
     products: list
-    quantity_categories = 0
-    quantity_products = 0
+    category_count = 0
+    product_count = 0
 
-
-    def __init__(self, name,description, products=None):
+    def __init__(self, name, description, products=None):
         """Инициализация класса категории продукта"""
         self.name = name
         self.description = description
         self.products = products if products else []
-        Category.quantity_categories += 1
-        Category.quantity_products = len(products) if products else 0
+        Category.category_count += 1
+        Category.product_count = len(products) if products else 0
 
 
 # if __name__ == '__main__':
