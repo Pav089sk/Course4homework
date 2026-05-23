@@ -13,7 +13,7 @@ class Category:
         self.description = description
         self.products = products if products else []
         Category.category_count += 1
-        Category.product_count = len(products) if products else 0
+        Category.product_count += len(self.products)
 
 
 # if __name__ == '__main__':
