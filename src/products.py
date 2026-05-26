@@ -39,10 +39,18 @@ class Product:
 
     @price.setter
     def price(self, new_price):
-        if 0 < new_price:
-            self.__price = new_price
-        else:
+        if new_price <= 0:
             print('Цена не должна быть нулевая или отрицательная')
+            return
+        if new_price < self.__price:
+            answer = input("Подтвердите понижение цены: 'y' — Да, 'n' — Нет: ").strip().lower()
+            if answer == 'y':
+                self.__price = new_price
+            else:
+                print("Изменение цены отменено.")
+        else:
+            self.__price = new_price
+
 
 # if __name__ == '__main__':
 #     #     # pragma: no cover
