@@ -1,3 +1,4 @@
+
 class Product:
     """Класс описания продукта"""
 
@@ -10,16 +11,67 @@ class Product:
         """Инициализация класса описания продукта"""
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
 
+    @classmethod
+    def new_product(cls, product_data: dict, products_list=None):
+        if products_list is None:
+            products_list = []
+        for prod in products_list:
+            if prod.name == product_data['name']:
+                new_quantity = prod.quantity + product_data['quantity']
+                new_price = max(prod.price, product_data['price'])
+                prod.quantity = new_quantity
+                prod.price = new_price
+                return prod
+        new_product =  cls(
+            name=product_data['name'],
+            description=product_data['description'],
+            price=product_data['price'],
+            quantity=product_data['quantity']
+        )
+        return new_product
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, new_price):
+        if 0 < new_price:
+            self.__price = new_price
+        else:
+            print('Цена не должна быть нулевая или отрицательная')
 
 # if __name__ == '__main__':
-#     # pragma: no cover
+#     #     # pragma: no cover
 #     product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 5)
-#     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
-#     product3 = Product('Лук', 'Овощи', 8.50, 5)
-#     product4 = Product('Помидор', 'Овощи', 12.8, 5)
-#     print(product1.description)
-#     print(product2.price)
-#     print(product4.quantity)
+#     #     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
+#     #     product3 = Product('Лук', 'Овощи', 8.50, 5)
+#     #     product4 = Product('Помидор', 'Овощи', 0, 5)
+#     #     print(product1.description)
+#     #     print(product3.price)
+#     #     print(product4.quantity)
+#     print(f"Начальная цена: {product1.price} руб.")  # Геттер
+#     # Меняем цену на корректную
+#     product1.price = 20.00
+#     print(f"Новая цена: {product1.price} руб.")  # Геттер после изменения
+#     # Попытка установить нулевую цену
+#     print("Попытка установить цену = 0:")
+#     product1.price = 0  # Сеттер с некорректным значением
+#     print(f"Цена после попытки: {product1.price} руб.")
+#     # Попытка установить отрицательную цену
+#     print("Попытка установить цену = -5:")
+#     product1.price = -5  # Сеттер с некорректным значением
+#     print(f"Цена после попытки: {product1.price} руб.")
+
+# Создаём продукт через classmethod
+# data = {
+#     'name': 'Груша',
+#     'description': 'Фрукты сладкие',
+#     'price': 13.60,
+#     'quantity': 5
+# }
+# product2 = Product.new_product(data)
+# print(f"\nПродукт из new_product: {product2.name}, {product2.description},  цена: {product2.price} руб, {product2.quantity} шт.")
