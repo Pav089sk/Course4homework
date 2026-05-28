@@ -1,4 +1,3 @@
-
 class Product:
     """Класс описания продукта"""
 
@@ -19,17 +18,17 @@ class Product:
         if products_list is None:
             products_list = []
         for prod in products_list:
-            if prod.name == product_data['name']:
-                new_quantity = prod.quantity + product_data['quantity']
-                new_price = max(prod.price, product_data['price'])
+            if prod.name == product_data["name"]:
+                new_quantity = prod.quantity + product_data["quantity"]
+                new_price = max(prod.price, product_data["price"])
                 prod.quantity = new_quantity
                 prod.price = new_price
                 return prod
-        new_product =  cls(
-            name=product_data['name'],
-            description=product_data['description'],
-            price=product_data['price'],
-            quantity=product_data['quantity']
+        new_product = cls(
+            name=product_data["name"],
+            description=product_data["description"],
+            price=product_data["price"],
+            quantity=product_data["quantity"],
         )
         return new_product
 
@@ -40,11 +39,11 @@ class Product:
     @price.setter
     def price(self, new_price):
         if new_price <= 0:
-            print('Цена не должна быть нулевая или отрицательная')
+            print("Цена не должна быть нулевая или отрицательная")
             return
         if new_price < self.__price:
             answer = input("Подтвердите понижение цены: 'y' — Да, 'n' — Нет: ").strip().lower()
-            if answer == 'y':
+            if answer == "y":
                 self.__price = new_price
             else:
                 print("Изменение цены отменено.")
@@ -75,11 +74,12 @@ class Product:
 #     print(f"Цена после попытки: {product1.price} руб.")
 
 # Создаём продукт через classmethod
-# data = {
+#     data = {
 #     'name': 'Груша',
 #     'description': 'Фрукты сладкие',
 #     'price': 13.60,
 #     'quantity': 5
-# }
-# product2 = Product.new_product(data)
+#     }
+#     product2 = Product.new_product(data)
+#     print(product2)
 # print(f"\nПродукт из new_product: {product2.name}, {product2.description},  цена: {product2.price} руб, {product2.quantity} шт.")

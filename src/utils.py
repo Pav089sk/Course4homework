@@ -20,18 +20,14 @@ def creator_from_json(data):
         products = []
         for product in category["products"]:
             products.append(Product(**product))
-        category = Category(
-            name=category["name"],
-            description=category["description"],
-            products=products
-        )
+        category = Category(name=category["name"], description=category["description"], products=products)
         categories.append(category)
     return categories
 
 
 # if __name__ == '__main__':
 
-    # print(read_json_data('../data/products.json'))
-    # print(creator_from_json(read_json_data('../data/products.json')))
-  # print(creator_from_json(read_json_data('../data/products.json'))[0].name)
-  #   print(creator_from_json(read_json_data('../data/products.json'))[0].products)
+# print(read_json_data('../data/products.json'))
+# print(creator_from_json(read_json_data('../data/products.json')))
+# print(creator_from_json(read_json_data('../data/products.json'))[0].name)
+#   print(creator_from_json(read_json_data('../data/products.json'))[0].products)

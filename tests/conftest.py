@@ -3,10 +3,12 @@ import pytest
 from src.categories import Category
 from src.products import Product
 
+
 @pytest.fixture(autouse=True)
 def reset_category_counts():
     Category.category_count = 0
     Category.product_count = 0
+
 
 @pytest.fixture
 def fruits_vegetables():
@@ -86,6 +88,19 @@ def snacks():
 def unit_product():
     return Product("Тестовый продукт", "Тестовое описание", 100, 50)
 
+
 @pytest.fixture
 def cat_for_test():
     return Category("Тестовая категория", "Описание", [])
+
+
+@pytest.fixture
+def prod_data():
+    data = {"name": "Груша", "description": "Фрукты сладкие", "price": 13.60, "quantity": 5}
+    return data
+
+
+@pytest.fixture
+def update_data():
+    data2 = {"name": "Груша", "description": "Фрукты сладкие", "price": 90.60, "quantity": 14}
+    return data2
