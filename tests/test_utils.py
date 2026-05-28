@@ -15,6 +15,4 @@ def test_transaction_data(mock_data):
 
 def test_creator(data_for_test):
     assert creator_from_json(data_for_test)[0].name == "Телевизоры"
-    assert creator_from_json(data_for_test)[0].products == [
-        {"description": "Фоновая подсветка", "name": '55" QLED 4K', "price": 123000.0, "quantity": 7}
-    ]
+    assert creator_from_json(data_for_test)[0].products == '55" QLED 4K, 123000.0 руб. Остаток: 7 шт.\n'

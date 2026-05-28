@@ -34,17 +34,17 @@ def smartphones():
     )
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def iphone():
     return Product("Iphone 17", "Последняя модель Apple IPhone", 68000, 4)
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def fruit():
     return Product("Яблоко", "Фрукты сладкие", 18.40, 5)
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def data_for_test():
     return [
         {
@@ -61,7 +61,7 @@ def data_for_test():
 def drinks():
     return Category(
         name="Напитки",
-        description="Сладкие газированные напитик",
+        description="Сладкие газированные напитки",
         products=[
             Product("Кола", "Добрый Кола", 129, 10),
             Product("RedBull", "Энергетический напиток", 179, 8),
@@ -80,3 +80,12 @@ def snacks():
             Product("Чипсы Naturals", "Чипсы Naturals с вкусом пармезана", 119, 11),
         ],
     )
+
+
+@pytest.fixture
+def unit_product():
+    return Product("Тестовый продукт", "Тестовое описание", 100, 50)
+
+@pytest.fixture
+def cat_for_test():
+    return Category("Тестовая категория", "Описание", [])
