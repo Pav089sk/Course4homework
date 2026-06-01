@@ -1,3 +1,5 @@
+
+
 class Product:
     """Класс описания продукта"""
 
@@ -12,6 +14,9 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт.\n"
 
     @classmethod
     def new_product(cls, product_data: dict, products_list=None):

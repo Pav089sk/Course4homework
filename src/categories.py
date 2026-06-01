@@ -18,6 +18,12 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(self.__products)
 
+    def __str__(self):
+        quantity = 0
+        for product in self.__products:
+            quantity += product.quantity
+        return f'{self.name}, количество продуктов: {quantity}.'
+
     def add_product(self, product):
         if isinstance(product, Product):
             self.__products.append(product)
@@ -29,18 +35,19 @@ class Category:
     def products(self):
         product_str = ""
         for product in self.__products:
-            product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
+            product_str += str(product)
         return product_str
 
 
-# if __name__ == '__main__':
-#     # pragma: no cover
-#     product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 5)
-#     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
-#     product3 = Product('Лук', 'Овощи', 8.50, 5)
-#     product4 = Product('Помидор', 'Овощи', 12.8, 5)
-#     category1 = Category('Фрукты', 'Все сладкое и вкусное', [product1, product2, product3])
-#     print(category1.name)
-#     print(category1.products)
-#     print(category1.category_count)
-#     print(category1.product_count)
+if __name__ == '__main__':
+    # pragma: no cover
+    product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 9)
+    product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
+    product3 = Product('Лук', 'Овощи', 8.50, 15)
+    product4 = Product('Помидор', 'Овощи', 12.8, 5)
+    category1 = Category('Фрукты', 'Все сладкое и вкусное', [product1, product2, product3, product4])
+    # print(category1.name)
+    # print(category1.products)
+    # print(category1.category_count)
+    # print(category1.product_count)
+    print(str(category1))
