@@ -2,7 +2,7 @@ import pytest
 
 from src.categories import Category
 from src.products import Product
-
+from src.iteration import IterProducts
 
 @pytest.fixture(autouse=True)
 def reset_category_counts():
@@ -90,7 +90,7 @@ def unit_product():
 
 @pytest.fixture
 def unit_product2():
-    return Product("Тестовый продукт2", "Тестовое описание2", 150, 210)
+    return Product("Тестовый продукт2", "Тестовое описание2", 100, 20)
 
 @pytest.fixture
 def cat_for_test():
@@ -107,3 +107,8 @@ def prod_data():
 def update_data():
     data2 = {"name": "Груша", "description": "Фрукты сладкие", "price": 90.60, "quantity": 14}
     return data2
+
+
+@pytest.fixture
+def products_iterator(smartphones):
+    return IterProducts(smartphones)

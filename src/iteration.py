@@ -1,7 +1,7 @@
-from src.categories import Category
-from src.products import Product
 
 class IterProducts:
+    """Вспомогательный класс, с помощью которого можно перебирать товары одной категории"""
+
     def __init__(self, cat_obj):
         self.category = cat_obj
         self.start = 0
