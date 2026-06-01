@@ -35,8 +35,12 @@ class Category:
     def products(self):
         product_str = ""
         for product in self.__products:
-            product_str += str(product)
+            product_str += f'{str(product)}\n'
         return product_str
+
+    @property
+    def product_list(self):
+        return self.__products
 
 
 if __name__ == '__main__':

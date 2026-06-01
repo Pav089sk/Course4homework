@@ -1,5 +1,4 @@
 
-
 class Product:
     """Класс описания продукта"""
 
@@ -16,7 +15,12 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
-        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт.\n"
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        first_prod = self.quantity * self.price
+        second_prod = other.quantity * other.price
+        return first_prod + second_prod
 
     @classmethod
     def new_product(cls, product_data: dict, products_list=None):
@@ -57,11 +61,15 @@ class Product:
 
 
 # if __name__ == '__main__':
-#     #     # pragma: no cover
+#
+#
+#     # pragma: no cover
 #     product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 5)
-#     #     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
-#     #     product3 = Product('Лук', 'Овощи', 8.50, 5)
-#     #     product4 = Product('Помидор', 'Овощи', 0, 5)
+#     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
+#     product3 = Product('Лук', 'Овощи', 8.50, 5)
+#     product4 = Product('Помидор', 'Овощи', 0, 5)
+#     print(product1 + product2)
+
 #     #     print(product1.description)
 #     #     print(product3.price)
 #     #     print(product4.quantity)
