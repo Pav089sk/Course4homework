@@ -1,8 +1,9 @@
 import pytest
 
 from src.categories import Category
-from src.products import Product
 from src.iteration import IterProducts
+from src.products import Product
+
 
 @pytest.fixture(autouse=True)
 def reset_category_counts():
@@ -88,9 +89,11 @@ def snacks():
 def unit_product():
     return Product("Тестовый продукт", "Тестовое описание", 100, 50)
 
+
 @pytest.fixture
 def unit_product2():
     return Product("Тестовый продукт2", "Тестовое описание2", 100, 20)
+
 
 @pytest.fixture
 def cat_for_test():

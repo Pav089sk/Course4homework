@@ -1,4 +1,3 @@
-
 class IterProducts:
     """Вспомогательный класс, с помощью которого можно перебирать товары одной категории"""
 
@@ -17,6 +16,7 @@ class IterProducts:
             return prod
         else:
             raise StopIteration
+
 
 # if __name__ == '__main__':
 #     product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 9)
