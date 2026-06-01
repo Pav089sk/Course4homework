@@ -88,6 +88,9 @@ def snacks():
 def unit_product():
     return Product("Тестовый продукт", "Тестовое описание", 100, 50)
 
+@pytest.fixture
+def unit_product2():
+    return Product("Тестовый продукт2", "Тестовое описание2", 150, 210)
 
 @pytest.fixture
 def cat_for_test():

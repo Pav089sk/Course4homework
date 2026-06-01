@@ -53,3 +53,7 @@ def test_price_emp():
     product.price = -100
     assert product.price == 100000
     assert "Цена не должна быть нулевая или отрицательная"
+
+
+def test_product_add(unit_product, unit_product2):
+    assert unit_product + unit_product2 == 36500
