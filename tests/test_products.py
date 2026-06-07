@@ -60,9 +60,11 @@ def test_price_emp():
 def test_product_add(unit_product, unit_product2):
     assert unit_product + unit_product2 == 7000
 
+
 def test_add_error_prod(unit_product):
     with pytest.raises(TypeError):
         res = unit_product + 1
+
 
 def test_iter_products(products_iterator):
     iter(products_iterator)
@@ -72,4 +74,3 @@ def test_iter_products(products_iterator):
     assert next(products_iterator).name == "Huawei Mate70"
     with pytest.raises(StopIteration):
         next(products_iterator)
-

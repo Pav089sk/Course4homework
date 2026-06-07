@@ -1,5 +1,6 @@
 from src.products import Product
 
+
 class LawnGrass(Product):
     def __init__(self, name, description, price, quantity, country, germination_period, color):
         super().__init__(name, description, price, quantity)
@@ -13,6 +14,7 @@ class LawnGrass(Product):
             second_prod = other.quantity * other.price
             return first_prod + second_prod
         raise TypeError
+
 
 # if __name__ == "__main__":
 #     product = LawnGrass('Gazon', 'grass for garden', 5000, 10, 'Russia', "50", "green")
