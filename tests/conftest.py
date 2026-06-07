@@ -129,7 +129,7 @@ def smartphone2():
 
 @pytest.fixture
 def lawn_grass1():
-    return LawnGrass('Gazon', 'grass for garden', 5000, 10, 'Russia', "50", "green")
+    return LawnGrass('Gazon', 'grass for garden', 5000, 10, 'Russia', "50", "Green")
 
 @pytest.fixture
 def lawn_grass2():
