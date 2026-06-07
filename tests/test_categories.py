@@ -1,4 +1,3 @@
-
 def test_all_prod(fruits_vegetables, smartphones):
     assert fruits_vegetables.name == "Фрукты и овощи"
     assert fruits_vegetables.description == "Все сладкое и вкусное"
@@ -33,3 +32,11 @@ def test_add_no_product(cat_for_test):
     counter = cat_for_test.product_count
     assert counter == 0
     assert "Объект не является продуктом"
+
+
+def test_list_cat(fruits_vegetables):
+    assert isinstance(fruits_vegetables.product_list, list)
+
+
+def test_str(smartphones):
+    assert str(smartphones) == "Смартфоны, количество продуктов: 12."

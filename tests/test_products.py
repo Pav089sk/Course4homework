@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+import pytest
+
 from src.products import Product
 
 
@@ -53,3 +55,17 @@ def test_price_emp():
     product.price = -100
     assert product.price == 100000
     assert "Цена не должна быть нулевая или отрицательная"
+
+
+def test_product_add(unit_product, unit_product2):
+    assert unit_product + unit_product2 == 7000
+
+
+def test_iter_products(products_iterator):
+    iter(products_iterator)
+    assert products_iterator.start == 0
+    assert next(products_iterator).name == "Iphone 17"
+    assert next(products_iterator).name == "Samsung Galaxy S26"
+    assert next(products_iterator).name == "Huawei Mate70"
+    with pytest.raises(StopIteration):
+        next(products_iterator)

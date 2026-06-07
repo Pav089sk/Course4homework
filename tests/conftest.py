@@ -1,6 +1,7 @@
 import pytest
 
 from src.categories import Category
+from src.iteration import IterProducts
 from src.products import Product
 
 
@@ -90,6 +91,11 @@ def unit_product():
 
 
 @pytest.fixture
+def unit_product2():
+    return Product("Тестовый продукт2", "Тестовое описание2", 100, 20)
+
+
+@pytest.fixture
 def cat_for_test():
     return Category("Тестовая категория", "Описание", [])
 
@@ -104,3 +110,8 @@ def prod_data():
 def update_data():
     data2 = {"name": "Груша", "description": "Фрукты сладкие", "price": 90.60, "quantity": 14}
     return data2
+
+
+@pytest.fixture
+def products_iterator(smartphones):
+    return IterProducts(smartphones)
