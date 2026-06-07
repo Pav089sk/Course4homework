@@ -2,7 +2,9 @@ import pytest
 
 from src.categories import Category
 from src.iteration import IterProducts
+from src.lawngrass import LawnGrass
 from src.products import Product
+from src.smartphones import Smartphone
 
 
 @pytest.fixture(autouse=True)
@@ -115,3 +117,23 @@ def update_data():
 @pytest.fixture
 def products_iterator(smartphones):
     return IterProducts(smartphones)
+
+
+@pytest.fixture
+def smartphone1():
+    return Smartphone("Iphone 17", "Apple smartphone", 65000, 1, "A19", "A2111", "256GB", "White")
+
+
+@pytest.fixture
+def smartphone2():
+    return Smartphone("Iphone 16", "Apple smartphone", 50000, 2, "A18", "A2100", "128GB", "black")
+
+
+@pytest.fixture
+def lawn_grass1():
+    return LawnGrass("Gazon", "grass for garden", 5000, 10, "Russia", "50", "Green")
+
+
+@pytest.fixture
+def lawn_grass2():
+    return LawnGrass("NewGazon", "best grass for garden", 10000, 11, "Belarus", "25", "royal green")
