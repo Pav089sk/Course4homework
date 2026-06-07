@@ -17,9 +17,11 @@ class Product:
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        first_prod = self.quantity * self.price
-        second_prod = other.quantity * other.price
-        return first_prod + second_prod
+        if type(other) is Product:
+            first_prod = self.quantity * self.price
+            second_prod = other.quantity * other.price
+            return first_prod + second_prod
+        raise TypeError
 
     @classmethod
     def new_product(cls, product_data: dict, products_list=None):
@@ -63,11 +65,12 @@ class Product:
 #
 #
 #     # pragma: no cover
-#     product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 5)
-#     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
+#     product1 = Product('Яблоко', 'Фрукты сладкие', 10, 5)
+#     product2 = Product('Груша', 'Фрукты сладкие', 20, 5)
 #     product3 = Product('Лук', 'Овощи', 8.50, 5)
 #     product4 = Product('Помидор', 'Овощи', 0, 5)
 #     print(product1 + product2)
+
 
 #     #     print(product1.description)
 #     #     print(product3.price)
