@@ -1,6 +1,6 @@
 from src.baseabs import BaseProduct
-
-class Product(BaseProduct):
+from src.mixinclass import MixinStr
+class Product(BaseProduct, MixinStr):
     """Класс описания продукта"""
 
     name: str
@@ -14,6 +14,7 @@ class Product(BaseProduct):
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
@@ -64,14 +65,12 @@ class Product(BaseProduct):
 
 
 # if __name__ == '__main__':
-#
-#
 #     # pragma: no cover
 #     product1 = Product('Яблоко', 'Фрукты сладкие', 10, 5)
 #     product2 = Product('Груша', 'Фрукты сладкие', 20, 5)
 #     product3 = Product('Лук', 'Овощи', 8.50, 5)
 #     product4 = Product('Помидор', 'Овощи', 0, 5)
-#     print(product1 + product2)
+# #     print(product1 + product2)
 
 
 #     #     print(product1.description)
