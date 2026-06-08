@@ -1,5 +1,6 @@
-from src.products import Product
 from src.baseabs import Named
+from src.products import Product
+
 
 class Category(Named):
     """Класс категории продукта"""

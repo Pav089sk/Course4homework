@@ -1,5 +1,5 @@
-from src.products import Product
 from src.baseabs import Named
+from src.products import Product
 
 
 class Order(Named):
@@ -15,12 +15,11 @@ class Order(Named):
         return self._name
 
 
-
 # if __name__ == '__main__':
 #     p = Product("Ноутбук", "Мощный", 50000, 10)
 #
 #     order = Order(p, 2, "Заказ-001")
-#     cat = Category("Электроника", "Всё для ПК")
+#     # cat = Category("Электроника", "Всё для ПК")
 #
 #     print(order.name)   # Заказ-001
-#     print(cat.name)
+#     # print(cat.name)
