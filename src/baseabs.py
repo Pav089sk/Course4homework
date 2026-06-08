@@ -5,3 +5,9 @@ class BaseProduct(ABC):
     @abstractmethod
     def new_product(cls, *args, **kwargs):
         pass
+
+class Named(ABC):
+    @property
+    @abstractmethod
+    def name(self) -> str:
+        pass

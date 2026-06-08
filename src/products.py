@@ -1,5 +1,7 @@
 from src.baseabs import BaseProduct
 from src.mixinclass import MixinStr
+
+
 class Product(BaseProduct, MixinStr):
     """Класс описания продукта"""
 

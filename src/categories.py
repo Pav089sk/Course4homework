@@ -1,7 +1,7 @@
 from src.products import Product
+from src.baseabs import Named
 
-
-class Category:
+class Category(Named):
     """Класс категории продукта"""
 
     name: str
@@ -12,11 +12,15 @@ class Category:
 
     def __init__(self, name, description, products=None):
         """Инициализация класса категории продукта"""
-        self.name = name
+        self._name = name
         self.description = description
         self.__products = products if products else []
         Category.category_count += 1
         Category.product_count += len(self.__products)
+
+    @property
+    def name(self) -> str:  # реализуем абстрактное свойство
+        return self._name
 
     def __str__(self):
         quantity = 0
