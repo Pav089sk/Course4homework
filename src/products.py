@@ -1,4 +1,6 @@
-class Product:
+from src.baseabs import BaseProduct
+
+class Product(BaseProduct):
     """Класс описания продукта"""
 
     name: str
