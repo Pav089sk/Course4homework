@@ -69,9 +69,9 @@ class Product(BaseProduct, MixinStr):
             self.__price = new_price
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 #     # pragma: no cover
-    product1 = Product('Яблоко', 'Фрукты сладкие', 10, 10)
+#     product1 = Product('Яблоко', 'Фрукты сладкие', 10, 10)
 #     product2 = Product('Груша', 'Фрукты сладкие', 20, 5)
 #     product3 = Product('Лук', 'Овощи', 8.50, 5)
 #     product4 = Product('Помидор', 'Овощи', 0, 5)
