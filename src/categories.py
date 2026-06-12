@@ -53,21 +53,20 @@ class Category(Named):
         try:
             avg_price = sum(p.price for p in self.__products) / len(self.__products)
             return round(avg_price, 2)
-        except:
-            if len(self.__products) == 0:
-                return 0
+        except ZeroDivisionError:
+            return 0
 
 
-if __name__ == '__main__':
-#     # pragma: no cover
-    product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 9)
-    product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
-    product3 = Product('Лук', 'Овощи', 8.50, 15)
-    product4 = Product('Помидор', 'Овощи', 12.8, 5)
-    category1 = Category('Фрукты', 'Все сладкое и вкусное', [product1, product2, product3, product4])
-#     print(category1.name)
-#     print(category1.products)
-#     print(category1.category_count)
-#     print(category1.product_count)
-#     print(str(category1))
-    print(category1.middle_price)
+# if __name__ == '__main__':
+# #     # pragma: no cover
+# #     product1 = Product('Яблоко', 'Фрукты сладкие', 18.40, 9)
+# #     product2 = Product('Груша', 'Фрукты сладкие', 13.60, 5)
+# #     product3 = Product('Лук', 'Овощи', 8.50, 15)
+# #     product4 = Product('Помидор', 'Овощи', 12.8, 5)
+#     category1 = Category('Фрукты', 'Все сладкое и вкусное', [product1, product2, product3, product4])
+# # #     print(category1.name)
+# # #     print(category1.products)
+# # #     print(category1.category_count)
+# # #     print(category1.product_count)
+# # #     print(str(category1))
+#     print(category1.middle_price)
