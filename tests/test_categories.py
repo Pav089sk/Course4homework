@@ -40,3 +40,8 @@ def test_list_cat(fruits_vegetables):
 
 def test_str(smartphones):
     assert str(smartphones) == "Смартфоны, количество продуктов: 12."
+
+
+def test_middle_price(snacks, cat_for_test):
+    assert snacks.middle_price == 152.33
+    assert cat_for_test.middle_price == 0

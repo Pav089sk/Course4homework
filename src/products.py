@@ -15,7 +15,10 @@ class Product(BaseProduct, MixinStr):
         self.name = name
         self.description = description
         self.__price = price
-        self.quantity = quantity
+        if quantity == 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
+        else:
+            self.quantity = quantity
         super().__init__()
 
     def __str__(self):
@@ -68,7 +71,7 @@ class Product(BaseProduct, MixinStr):
 
 # if __name__ == '__main__':
 #     # pragma: no cover
-#     product1 = Product('Яблоко', 'Фрукты сладкие', 10, 5)
+#     product1 = Product('Яблоко', 'Фрукты сладкие', 10, 10)
 #     product2 = Product('Груша', 'Фрукты сладкие', 20, 5)
 #     product3 = Product('Лук', 'Овощи', 8.50, 5)
 #     product4 = Product('Помидор', 'Овощи', 0, 5)

@@ -74,3 +74,14 @@ def test_iter_products(products_iterator):
     assert next(products_iterator).name == "Huawei Mate70"
     with pytest.raises(StopIteration):
         next(products_iterator)
+
+
+def test_init_raise(empty_prod_quan):
+    name, description, price, quantity = empty_prod_quan
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product(name, description, price, quantity)
+
+
+def test_init_raise1():
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product("Груша", "Фрукты сладкие", 13.60, 0)

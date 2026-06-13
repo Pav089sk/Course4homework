@@ -109,6 +109,11 @@ def prod_data():
 
 
 @pytest.fixture
+def empty_prod_quan():
+    return ("Груша", "Фрукты сладкие", 13.60, 0)
+
+
+@pytest.fixture
 def update_data():
     data2 = {"name": "Груша", "description": "Фрукты сладкие", "price": 90.60, "quantity": 14}
     return data2
